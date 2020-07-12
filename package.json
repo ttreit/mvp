@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./source --out-dir public --watch",
+    "build": "babel ./source --out-dir public --presets=react --source-maps inline --watch",
     "dev": "nodemon server.js"
   },
   "repository": {
