@@ -1,6 +1,0 @@
-ReactDOM.render(React.createElement(
-  'h2',
-  null,
-  'Treit Family Homonym React Test'
-), document.getElementById('root'));
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NvdXJjZS9hcHAuanN4Il0sIm5hbWVzIjpbIlJlYWN0RE9NIiwicmVuZGVyIiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCJdLCJtYXBwaW5ncyI6IkFBQUFBLFNBQVNDLE1BQVQsQ0FDRTtBQUFBO0FBQUE7QUFBQTtBQUFBLENBREYsRUFFRUMsU0FBU0MsY0FBVCxDQUF3QixNQUF4QixDQUZGIiwiZmlsZSI6ImFwcC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlJlYWN0RE9NLnJlbmRlcihcbiAgPGgyPlRyZWl0IEZhbWlseSBIb21vbnltIFJlYWN0IFRlc3Q8L2gyPixcbiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKVxuKTsiXX0=
