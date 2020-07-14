@@ -13,8 +13,6 @@ class App extends Component {
       <div className='heading'>
         <h1>Treit Family Homonym Tracker</h1>
         <SubmissionForm />
-
-
       </div>
     );
   }

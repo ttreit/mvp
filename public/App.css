@@ -1,9 +1,12 @@
 .heading {
   margin: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-h1 {
-  color:  rgb(121, 39, 148);
+  color: rgb(121, 39, 148);
   text-align: center;
 }
+
+.submissionform {
+  color: orchid;
+  text-align: center;
+}
+
