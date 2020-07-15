@@ -1,3 +1,6 @@
+#passwords
+.env
+
 ### node etc ###
 
 # Logs
@@ -36,6 +39,3 @@ bower_components/
 
 #compiled
 bundle.js
-
-#passwords
-.env
