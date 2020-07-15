@@ -30,7 +30,7 @@ app.post('/', (req, res) => {
     set: req.body.set,
     user: req.body.user
   });
-  set.save(); //returns a promise
+  set.save() //returns a promise
 })
 
 
