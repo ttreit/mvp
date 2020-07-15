@@ -1,13 +1,15 @@
-db.homonyms.insertMany([
+db.sets.insert( {set: ['hart', 'heart'], user: 'Kathryn'} );
+
+db.sets.insertMany([
   {set: ['hart', 'heart'], user: 'Kathryn'},
   {set: ['two', 'too', 'to'], user: 'Aileen'},
   {set: ['right', 'write'], user: 'Aileen'},
   {set: ['whoa', 'woe'], user: 'Tammy'}
 ]);
 
-db.homonyms.find({set: 'hart'});
-db.homonyms.find({user: 'Kathryn'})
+db.sets.find({set: 'hart'});
+db.sets.find({user: 'Kathryn'})
 
-db.homonyms.find( {}, { set: 1, user: 1 } );
-db.homonyms.find( {}, { _id: 0, set: 1, user: 1 } );
-db.homonyms.find( {}, { _id: 0, user: 0 } );
+db.sets.find( {}, { set: 1, user: 1 } );
+db.sets.find( {}, { _id: 0, set: 1, user: 1 } );
+db.sets.find( {}, { _id: 0, user: 0 } );
