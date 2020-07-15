@@ -1,4 +1,4 @@
-db.sets.insert( {set: ['hart', 'heart'], user: 'Kathryn'} );
+db.sets.insert( {set: ['hi', 'high'], user: 'Ashley'} );
 
 db.sets.insertMany([
   {set: ['hart', 'heart'], user: 'Kathryn'},
@@ -13,3 +13,20 @@ db.sets.find({user: 'Kathryn'})
 db.sets.find( {}, { set: 1, user: 1 } );
 db.sets.find( {}, { _id: 0, set: 1, user: 1 } );
 db.sets.find( {}, { _id: 0, user: 0 } );
+
+
+
+Mongoose
+
+Schema Types
+String
+Number
+Date
+Buffer
+Boolean
+Mixed
+ObjectId
+Array
+Decimal128
+Map
+Schema
