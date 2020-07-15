@@ -36,3 +36,6 @@ bower_components/
 
 #compiled
 bundle.js
+
+#passwords
+.env
