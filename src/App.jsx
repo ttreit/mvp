@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return(
       <div className='heading'>
-        <h1>Treit Family Homonym Tracker</h1>
+        <h1>Homonym Tracker</h1>
         <SubmissionForm />
       </div>
     );
