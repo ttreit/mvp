@@ -2,6 +2,7 @@
 const express = require('express');  //express itself
 const bodyParser = require('body-parser'); //used for parsing incoming req bodies (node.js middlware)
 const mongoose = require('mongoose'); //makes connecting to mongoDB easier
+require('dotenv/config');
 
 
 //create app and set port
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 
 //connect to mongoDb (Atlas)
 mongoose.connect(
-  'mongodb+srv://Tammy:GoHawks@seahawk1.b4fyp.mongodb.net/homonyms?retryWrites=true&w=majority',
+  process.env.DB_CONNECTION,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log('Connected to Atlas')
 );
