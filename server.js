@@ -4,11 +4,16 @@ const bodyParser = require('body-parser'); //used for parsing incoming req bodie
 const mongoose = require('mongoose'); //makes connecting to mongoDB easier
 require('dotenv/config');
 
+//add mongoose schema for a set
+const Set = require('./models/Set')
+
 
 //create app and set port
 const app = express();
 const port = process.env.port || 5347;
 
+//parse incoming requests
+app.use(bodyParser.json());
 
 //static files available to server root
 app.use(express.static('public'));
@@ -17,6 +22,17 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(index.html);
 });
+
+app.post('/', (req, res) => {
+  res.send('Post Request')
+  console.log ('req.body: ', req.body);
+  const set = new Set({
+    set: req.body.set,
+    user: req.body.user
+  });
+  set.save(); //returns a promise
+})
+
 
 //connect to mongoDb (Atlas)
 mongoose.connect(
