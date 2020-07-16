@@ -43,7 +43,6 @@ app.post('/', (req, res) => {
   //console.log('contenttype', req);
   const set = new Set({
     set: req.body.set
-    //user: req.body.user
   });
   set.save() //returns a promise
 });
