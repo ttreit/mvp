@@ -1,7 +1,11 @@
-.heading {
+#listHeading {
   margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
   color: rgb(121, 39, 148);
+  padding-top: 2rem;
+  }
+
+#list {
   text-align: center;
 }
 

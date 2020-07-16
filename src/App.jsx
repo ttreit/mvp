@@ -30,26 +30,20 @@ class App extends Component {
 
   render() {
   return (
-    <form onSubmit={this.handleSubmit}>
+    <div>
+      <form onSubmit={this.handleSubmit}>
       <label>
         Homonyms:
         <input type='string' value={this.state.inputText} onChange={this.handleChange} />
       </label>
       <input type='submit' value='Enter Homonyms!' />
     </form>
+      <h1 id='listHeading'>We Have</h1>
+      <div id='list'>
+      </div>
+    </div>
   );
 }
-
-
-
-  // render() {
-  //   return(
-  //     <div className='heading'>
-  //       <h1>Homonym Tracker</h1>
-  //       <SubmissionForm />
-  //     </div>
-  //   );
-  // }
 }
 
 export default App;
