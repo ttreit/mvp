@@ -4,7 +4,9 @@ const bodyParser = require('body-parser'); //used for parsing incoming req bodie
 const mongoose = require('mongoose'); //makes connecting to mongoDB easier
 const { body, validationResult } = require('express-validator');
 const { santizeBody } = require('express-validator');
+const logger = require('./middleware/logger');
 require('dotenv/config');
+
 
 //add mongoose schema for a set
 const Set = require('./models/Set')
@@ -12,10 +14,13 @@ const Set = require('./models/Set')
 
 //create app and set port
 const app = express();
-const port = process.env.port || 5347;
+const port = process.env.port || 7100;
 
 //parse incoming requests
 app.use(bodyParser.urlencoded({extended: true}));
+
+//log incoming requests to console
+app.use(logger);
 
 //static files available to server root
 app.use(express.static('public'));
@@ -29,10 +34,12 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   res.send('Post Request')
   console.log('req.body: ', req.body);
-  console.log('contenttype', req);
+
+
+  //console.log('contenttype', req);
   const set = new Set({
-    set: req.body.set,
-    user: req.body.user
+    set: req.body
+    //user: req.body.user
   });
   set.save() //returns a promise
 });
