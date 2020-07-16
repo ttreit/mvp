@@ -1,6 +1,12 @@
 const processString = function (req, res, next) {
   for (key in req.body) {
-    req.body.set = key;
+    const createSet = function(key) {
+      return {
+        set: key
+      }
+    }
+    req.body.set = createSet(key);
+    console.log('set ', req.body.set);
   }
 
 next();
