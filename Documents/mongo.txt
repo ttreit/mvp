@@ -8,6 +8,7 @@ db.sets.insertMany([
 ]);
 
 db.sets.find({set: 'hart'});
+db.sets.find({set: 'bye'});
 db.sets.find({user: 'Kathryn'})
 
 db.sets.find( {}, { set: 1, user: 1 } );
