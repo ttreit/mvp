@@ -5,6 +5,7 @@ const mongoose = require('mongoose'); //makes connecting to mongoDB easier
 const { body, validationResult } = require('express-validator');
 const { santizeBody } = require('express-validator');
 const logger = require('./middleware/logger');
+const processString = require('./middleware/processString');
 require('dotenv/config');
 
 
@@ -21,6 +22,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //log incoming requests to console
 app.use(logger);
+
+//convert string to BSON
+app.use(processString);
 
 //static files available to server root
 app.use(express.static('public'));
