@@ -7,7 +7,8 @@ class App extends Component {
     super(props);
     this.state = {
       page: 1,
-      inputText: ''  //inputText
+      inputText: '',  //inputText
+      outputText: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,8 +19,9 @@ class App extends Component {
       type: 'GET',
       url: '/list',
       success: (data) => {
-        const setItem = data.map(item => console.log(item.set));
-        console.log(setItem);
+        const setItem = data.map((item) => {
+          this.setState({ outputText: item.set });
+        });
       }
     });
   }
@@ -50,6 +52,9 @@ class App extends Component {
         </form>
         <h1 id='listHeading'>We Have</h1>
         <div id='list'>
+          <h4>
+            { this.state.outputText }
+          </h4>
         </div>
       </div>
     );
