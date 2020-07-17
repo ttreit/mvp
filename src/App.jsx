@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SubmissionForm from './SubmissionForm';
 import $ from 'jquery';
+import MasterList from './MasterList';
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class App extends Component {
     this.state = {
       page: 1,
       inputText: '',  //inputText
-      outputText: ''
+      currentList: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,9 +20,7 @@ class App extends Component {
       type: 'GET',
       url: '/list',
       success: (data) => {
-        const setItem = data.map((item) => {
-          this.setState({ outputText: item.set });
-        });
+        this.setState({ currentList: data })
       }
     });
   }
@@ -52,9 +51,7 @@ class App extends Component {
         </form>
         <h1 id='listHeading'>We Have</h1>
         <div id='list'>
-          <h4>
-            { this.state.outputText }
-          </h4>
+          <MasterList />
         </div>
       </div>
     );
