@@ -7,15 +7,25 @@ class App extends Component {
     super(props);
     this.state = {
       page: 1,
-      inputText: '',  //inputText
+      inputText: ''  //inputText
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    $.ajax({
+      type: 'GET',
+      url: '/list',
+      success: (data) => {
+        const setItem = data.map(item => console.log(item.set));
+        console.log(setItem);
+      }
+    });
+  }
+
   handleChange(event) {
-    this.setState({inputText: event.target.value});
+    this.setState({ inputText: event.target.value });
   }
 
   handleSubmit(event) {
@@ -29,21 +39,21 @@ class App extends Component {
   }
 
   render() {
-  return (
-    <div>
-      <form onSubmit={this.handleSubmit}>
-      <label>
-        Homonyms:
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Homonyms:
         <input type='string' value={this.state.inputText} onChange={this.handleChange} />
-      </label>
-      <input type='submit' value='Enter Homonyms!' />
-    </form>
-      <h1 id='listHeading'>We Have</h1>
-      <div id='list'>
+          </label>
+          <input type='submit' value='Enter Homonyms!' />
+        </form>
+        <h1 id='listHeading'>We Have</h1>
+        <div id='list'>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default App;
