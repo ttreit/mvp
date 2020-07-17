@@ -12,10 +12,16 @@ require('dotenv/config');
 //add mongoose schema for a set
 const Set = require('./models/Set')
 
-
 //create app and set port
 const app = express();
 const port = process.env.port || 7100;
+
+//connect to mongoDb (Atlas)
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => console.log('Connected to Remote Database')
+);
 
 //parse incoming requests
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,7 +29,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //log incoming requests to console
 app.use(logger);
 
-//convert string to BSON
+//extract string to send to DB
 app.use(processString);
 
 //static files available to server root
@@ -34,12 +40,17 @@ app.get('/', (req, res) => {
   res.sendFile(index.html);
 });
 
+app.get('/list', async (req, res) => {
+  const list = await Set.find({}, {set: 1, _id: 0} );
+  //list is an array of sets {set: 'hart heart'}
+  res.send(list);
+});
+
+//TODO How to escape/prevent xss attacks
 //TODO add validation w/ express-validator
 app.post('/', (req, res) => {
   res.send('Post Request')
   console.log('req.body: ', req.body);
-
-
   //console.log('contenttype', req);
   const set = new Set({
     set: req.body.set
@@ -47,19 +58,9 @@ app.post('/', (req, res) => {
   set.save() //returns a promise
 });
 
-
-//connect to mongoDb (Atlas)
-mongoose.connect(
-  process.env.DB_CONNECTION,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => console.log('Connected to Atlas')
-);
-
-
 //start server
 app.listen(port, () => console.log(`Server up and running on port ${port}`));
 
-//TODO How to escape/prevent xss attacks
 
 
 
