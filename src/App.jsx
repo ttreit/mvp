@@ -43,8 +43,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <MasterList />
-        <SubForm />
+        <MasterList currentList={this.state.currentList}/>
+        <SubForm inputText={this.state.inputText}/>
       </div>
     );
   }

@@ -2,8 +2,8 @@
 const express = require('express');  //express itself
 const bodyParser = require('body-parser'); //used for parsing incoming req bodies (node.js middlware)
 const mongoose = require('mongoose'); //makes connecting to mongoDB easier
-const { body, validationResult } = require('express-validator');
-const { santizeBody } = require('express-validator');
+// const { body, validationResult } = require('express-validator');
+// const { santizeBody } = require('express-validator');
 const logger = require('./middleware/logger');
 const processString = require('./middleware/processString');
 require('dotenv/config');

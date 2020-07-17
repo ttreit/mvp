@@ -1,11 +1,28 @@
 import React from 'react';
 
-const SubForm = function (props) {
+function SubForm(props) {
   return (
     <div>
-      SubForm:
+      <h1>Hello {} </h1>
+      {console.log(props.currentList)}
     </div>
   )
-};
+
+}
 
 export default SubForm;
+
+
+
+// const SubForm = function (props) {
+//   return (
+//     <div>
+//       <div>
+//       SubForm:
+//       </div>
+//       <div>
+//       { console.log(props) }
+//       </div>
+//     </div>
+//   )
+// };
