@@ -1,0 +1,10 @@
+  <div>
+      <form onSubmit={props.handleSubmit}>
+        <label>
+          Homonyms:
+  <input type='string' value={props.state.inputText} onChange={props.handleChange} />
+        </label>
+        <input type='submit' value='Enter Homonyms!' />
+      </form>
+      <h1 id='listHeading'>We Have</h1>
+    </div>

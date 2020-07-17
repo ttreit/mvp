@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import SubmissionForm from './SubmissionForm';
 import $ from 'jquery';
 import MasterList from './MasterList';
+import SubForm from './SubForm';
+
 
 class App extends Component {
   constructor(props) {
@@ -42,17 +43,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Homonyms:
-        <input type='string' value={this.state.inputText} onChange={this.handleChange} />
-          </label>
-          <input type='submit' value='Enter Homonyms!' />
-        </form>
-        <h1 id='listHeading'>We Have</h1>
-        <div id='list'>
-          <MasterList />
-        </div>
+        <MasterList />
+        <SubForm />
       </div>
     );
   }
