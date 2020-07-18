@@ -53,7 +53,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <SubForm inputText={this.state.inputText} handleChange={this.handleChange} handleSubmit = {this.handleSubmit}/>
         <MasterList currentList={this.state.currentList} />
       </div>

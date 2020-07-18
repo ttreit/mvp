@@ -3,11 +3,11 @@ import React from 'react';
 function MasterList(props) {
   const sets = props.currentList;
   const listItems = sets.map((set) =>
-    <li>{set.set}</li>
+    <li className='item' >{set.set}</li>
   );
   return (
     <div>
-      <h1 id='listHeading'>Homonym List</h1>
+      <h1 id='listHeading'>Homonyms</h1>
       <ul className='list'>{listItems}</ul>
     </div>
   );

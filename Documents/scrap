@@ -1,10 +1,22 @@
-  <div>
-      <form onSubmit={props.handleSubmit}>
-        <label>
-          Homonyms:
-  <input type='string' value={props.state.inputText} onChange={props.handleChange} />
-        </label>
-        <input type='submit' value='Enter Homonyms!' />
-      </form>
-      <h1 id='listHeading'>We Have</h1>
-    </div>
+#masterList {
+  text-align: center;
+}
+
+#listHeading {
+  margin: 1rem;
+  text-align: center;
+  color: rgb(121, 39, 148);
+  padding-top: 2rem;
+  }
+
+.list {
+  text-align: center;
+  list-style-type: none;
+}
+
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 400px;
+  /* Form outline */
+}
