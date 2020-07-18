@@ -9,8 +9,9 @@
   padding-top: 2rem;
   }
 
-#list {
+.list {
   text-align: center;
+  list-style-type: none;
 }
 
 form {
