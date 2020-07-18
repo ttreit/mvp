@@ -8,7 +8,7 @@ function MasterList(props) {
   return (
     <div>
       <h1 id='listHeading'>Homonym List</h1>
-      <ul class='list'>{listItems}</ul>
+      <ul className='list'>{listItems}</ul>
     </div>
   );
 }
