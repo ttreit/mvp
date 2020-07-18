@@ -1,13 +1,14 @@
 import React from 'react';
 
-const MasterList = function (props) {
+function MasterList(props) {
+  const sets = props.currentList;
+  console.log(sets, Array.isArray(sets));
+  const listItems = sets.map((set) =>
+    <li>{set.set}</li>
+  );
   return (
-    <div>
-      <div id='masterList'>
-        This is a test of CSS
-      </div>
-    </div>
-  )
-};
+    <ul>{listItems}</ul>
+  );
+}
 
 export default MasterList;
