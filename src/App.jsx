@@ -16,6 +16,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   componentDidMount() {
     $.ajax({
       type: 'GET',
@@ -36,8 +37,18 @@ class App extends Component {
     $.ajax({
       type: 'POST',
       url: '/',
-      data: this.state.inputText
-    })
+      data: this.state.inputText,
+      success: (data) => {
+        $.ajax({
+          type: 'GET',
+          url: '/list',
+          success: (data) => {
+            this.setState({ currentList: data })
+            this.setState({ inputText: '' })
+          }
+        });
+      }
+    });
   }
 
   render() {
