@@ -49,13 +49,13 @@ app.get('/list', async (req, res) => {
 //TODO How to escape/prevent xss attacks
 //TODO add validation w/ express-validator
 app.post('/', (req, res) => {
-  res.send('Post Request')
-  console.log('req.body: ', req.body);
+  console.log('req.body: ', req.body.set);
   //console.log('contenttype', req);
   const set = new Set({
     set: req.body.set
   });
   set.save() //returns a promise
+  .then (res.sendStatus(200));
 });
 
 //start server
