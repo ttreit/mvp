@@ -7,7 +7,7 @@ function MasterList(props) {
     <li>{set.set}</li>
   );
   return (
-    <ul>{listItems}</ul>
+    <ul class='list'>{listItems}</ul>
   );
 }
 

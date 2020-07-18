@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <div>
         <MasterList currentList={this.state.currentList} />
-        <SubForm inputText={this.state.inputText} />
+        <SubForm inputText={this.state.inputText} handleChange={this.handleChange} handleSubmit = {this.handleSubmit}/>
       </div>
     );
   }
