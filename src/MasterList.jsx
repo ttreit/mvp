@@ -6,7 +6,10 @@ function MasterList(props) {
     <li>{set.set}</li>
   );
   return (
-    <ul class='list'>{listItems}</ul>
+    <div>
+      <h1 id='listHeading'>Homonym List</h1>
+      <ul class='list'>{listItems}</ul>
+    </div>
   );
 }
 

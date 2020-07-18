@@ -43,8 +43,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <MasterList currentList={this.state.currentList} />
         <SubForm inputText={this.state.inputText} handleChange={this.handleChange} handleSubmit = {this.handleSubmit}/>
+        <MasterList currentList={this.state.currentList} />
       </div>
     );
   }
